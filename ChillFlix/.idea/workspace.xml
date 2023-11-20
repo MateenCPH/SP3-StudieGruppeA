@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e123b07-b659-4084-aa15-22417251ebf1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/FileIO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Homepage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Media.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Movies.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Series.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/TextUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Homepage.java" afterDir="false" />
+    </list>
+    <list id="9aa99f30-2f8d-4fd4-95fc-1147ec12831e" name="Changes by marcushjorth" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Media.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/mjar/Documents/dev",
     "node.js.detected.package.eslint": "true",
@@ -63,7 +61,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1700474077706</updated>
-      <workItem from="1700474078732" duration="754000" />
+      <workItem from="1700474078732" duration="1859000" />
     </task>
     <servers />
   </component>
