@@ -1,13 +1,15 @@
 package org.example;
 
 
+import java.util.ArrayList;
+
 public class Movies implements Media {
     private final String movieName;
-    private final String category;
+    private ArrayList<String>category = new ArrayList<>();
     private final int releaseDate;
     private final float rating;
 
-    public Movies(String movieName, String category, int releaseDate, float rating){
+    public Movies(String movieName, ArrayList<String>category, int releaseDate, float rating){
         this.movieName = movieName;
         this.category = category;
         this.releaseDate = releaseDate;
@@ -15,7 +17,7 @@ public class Movies implements Media {
     }
 
     public void play(){
-
+        System.out.println(movieName + " is now playing");
     }
 
     public void addToUserList() {

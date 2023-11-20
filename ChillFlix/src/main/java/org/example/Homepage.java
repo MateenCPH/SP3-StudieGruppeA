@@ -20,13 +20,21 @@ public class Homepage {
     }
 
     public void setUp(){
-        String [] readData = io.readMediaData("data/")
-    }
+        //String [] readData = io.readMediaData("data/")
+        ArrayList<String> readData = io.readMediaData("data/");
+            for (String s : readData){
+                String [] row = s.split(";");
+                String Name = row[0];
+                String Genre = row[1];
+            }
+
+        }
+
 
     public ArrayList<Movies> getMovieList() {
         return movieList;
     }
-    public ArrayList<Movies>getWatchedMovies(){
+    public ArrayList<Movies> getWatchedMovies(){
         return watchedMovies;
     }
     public ArrayList<Movies> getSavedMovies(){
@@ -44,4 +52,6 @@ public class Homepage {
     public void endStreming(){
 
     }
+
+    //Rodney laver USECASE2 = RegisterUser
 }

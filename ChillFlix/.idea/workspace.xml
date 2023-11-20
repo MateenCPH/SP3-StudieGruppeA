@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e123b07-b659-4084-aa15-22417251ebf1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/movies.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/series.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FileIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FileIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/User.java" afterDir="false" />
     </list>
     <list id="0cc33a10-36eb-4e68-b06e-4f07dfb14569" name="Changes by jonsi" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Media.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Movies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Movies.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Series.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Series.java" afterDir="false" />
     </list>
     <list id="9aa99f30-2f8d-4fd4-95fc-1147ec12831e" name="Changes by marcushjorth" comment="">
@@ -23,6 +21,7 @@
     </list>
     <list id="cc113478-b819-4377-9b89-c6d1536e980b" name="Changes by Rodney" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Homepage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Series.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Series.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +43,28 @@
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/src/main/java/org/example/Homepage.java">
       <ranges>
-        <range start1="1" end1="1" start2="1" end2="2" changelist="cc113478-b819-4377-9b89-c6d1536e980b" />
-        <range start1="3" end1="3" start2="4" end2="46" changelist="98a204b4-be4f-4b6f-ad95-272081830694" />
+        <range start1="22" end1="24" start2="22" end2="32" changelist="98a204b4-be4f-4b6f-ad95-272081830694" />
+        <range start1="28" end1="29" start2="36" end2="37" changelist="cc113478-b819-4377-9b89-c6d1536e980b" />
+        <range start1="46" end1="46" start2="54" end2="56" changelist="cc113478-b819-4377-9b89-c6d1536e980b" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/org/example/Movies.java">
+      <ranges>
+        <range start1="3" end1="3" start2="3" end2="5" changelist="9aa99f30-2f8d-4fd4-95fc-1147ec12831e" />
+        <range start1="5" end1="6" start2="7" end2="8" changelist="9aa99f30-2f8d-4fd4-95fc-1147ec12831e" />
+        <range start1="9" end1="10" start2="11" end2="12" changelist="9aa99f30-2f8d-4fd4-95fc-1147ec12831e" />
+        <range start1="17" end1="18" start2="19" end2="20" changelist="0cc33a10-36eb-4e68-b06e-4f07dfb14569" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/org/example/Series.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="4" changelist="0cc33a10-36eb-4e68-b06e-4f07dfb14569" />
+        <range start1="5" end1="6" start2="7" end2="8" changelist="0cc33a10-36eb-4e68-b06e-4f07dfb14569" />
+        <range start1="11" end1="12" start2="13" end2="14" changelist="0cc33a10-36eb-4e68-b06e-4f07dfb14569" />
+        <range start1="18" end1="19" start2="20" end2="20" changelist="cc113478-b819-4377-9b89-c6d1536e980b" />
+        <range start1="22" end1="23" start2="23" end2="25" changelist="0cc33a10-36eb-4e68-b06e-4f07dfb14569" />
+        <range start1="25" end1="27" start2="27" end2="29" changelist="0cc33a10-36eb-4e68-b06e-4f07dfb14569" />
+        <range start1="29" end1="31" start2="31" end2="33" changelist="0cc33a10-36eb-4e68-b06e-4f07dfb14569" />
       </ranges>
     </file>
   </component>
@@ -81,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1700474077706</updated>
-      <workItem from="1700474078732" duration="5384000" />
+      <workItem from="1700474078732" duration="7567000" />
     </task>
     <servers />
   </component>

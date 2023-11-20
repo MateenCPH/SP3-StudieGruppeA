@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 
 public class TextUI {
-    private scanner scan = new scanner(System.in);
+    private Scanner scan = new Scanner(System.in);
 
     public String getInput(String msg){
         this.(msg);
@@ -13,4 +13,6 @@ public class TextUI {
     public void displayMsg(String msg){
         System.out.println(msg);
     }
+
+
 }
