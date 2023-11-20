@@ -7,7 +7,7 @@ import java.util.Set;
 public class Movies implements Media {
     private final String movieName;
     private final int releaseDate;
-    private Set<String> genre;
+    private final Set<String> genre;
     private final double rating;
 
     public Movies(String movieName, int releaseDate, Set<String>genre, double rating){
@@ -19,11 +19,12 @@ public class Movies implements Media {
 
     public void play(User user, Movies movies) {
         System.out.println(movieName + " is now playing");
-        user.addToWatchedMovies(movies);
+        ArrayList<Movies> m = new ArrayList<>();
+        user.addToWatchedMovies(m, movies);
     }
 
     public void addToUserList(User user, Movies movies) {
-        user.addToWatchedMovies(movies);
+        user.addToWatchedMovies(ArrayList<>, movies);
     }
 
     public void removeFromUserList() {
