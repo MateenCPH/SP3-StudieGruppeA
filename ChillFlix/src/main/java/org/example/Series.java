@@ -20,9 +20,9 @@ public class Series implements Media{
         this.rating = rating;
     }
 
-    public void play() {
+    public void play(User user, Series series) {
         System.out.println(seriesName + " " + season + " " + episode + " is now playing");
-        watchedSeries.add();
+        user.addToWatchedSeries(series);
     }
 
     public void addToUserList(User user, Series series) {
@@ -30,7 +30,7 @@ public class Series implements Media{
     }
 
     public void removeFromUserList(User user, Series series) {
-        savedSeries.remove();
+
     }
 
     @Override

@@ -2,34 +2,40 @@ package org.example;
 
 
 import java.util.ArrayList;
+import java.util.Set;
 
 public class Movies implements Media {
     private final String movieName;
-    private ArrayList<String>category = new ArrayList<>();
     private final int releaseDate;
-    private final float rating;
+    private Set<String> genre;
+    private final double rating;
 
-    public Movies(String movieName, ArrayList<String>category, int releaseDate, float rating){
+    public Movies(String movieName, int releaseDate, Set<String>genre, double rating){
         this.movieName = movieName;
-        this.category = category;
+        this.genre = genre;
         this.releaseDate = releaseDate;
         this.rating = rating;
     }
 
-    public void play(){
+    public void play(User user, Movies movies) {
         System.out.println(movieName + " is now playing");
+        user.addToWatchedMovies(movies);
     }
 
-    public void addToUserList() {
-
+    public void addToUserList(User user, Movies movies) {
+        user.addToWatchedMovies(movies);
     }
 
     public void removeFromUserList() {
 
     }
 
+    public Set<String> getGenre() {
+        return genre;
+    }
+
     @Override
     public String toString() {
-        return "Movie name: " + movieName + " Category: " + category + " releaseDate: " + releaseDate + " Rating: " + rating;
+        return "Movie name: " + movieName + " Category: " + genre + " releaseDate: " + releaseDate + " Rating: " + rating;
     }
 }
