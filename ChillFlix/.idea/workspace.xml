@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
     <list default="true" id="3e123b07-b659-4084-aa15-22417251ebf1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Homepage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Movies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Movies.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Series.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Series.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/series.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/series.txt" afterDir="false" />
     </list>
-=======
-    <list default="true" id="3e123b07-b659-4084-aa15-22417251ebf1" name="Changes" comment="" />
->>>>>>> Stashed changes
     <list id="d7bb9322-c455-4548-bee4-378febc7d595" name="Changes by jonsi" comment="" />
     <list id="dbfca0ec-b9b4-4b0c-8a62-51f212de1c4f" name="Changes by marcushjorth" comment="" />
     <list id="e68fa153-cf58-4b6c-9ef9-990049813413" name="Changes by rebeccamaryburonsorensen" comment="" />
@@ -108,5 +102,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

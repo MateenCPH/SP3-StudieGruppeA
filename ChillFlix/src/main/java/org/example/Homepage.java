@@ -7,6 +7,7 @@ import java.util.HashMap;
 public class Homepage {
     FileIO io = new FileIO();
     private ArrayList<Movies> movies;
+    private ArrayList<Series> series;
     private ArrayList<Series> seriesList;
     private final TextUI ui = new TextUI();
     private final User u = new User("Username", "Password");
@@ -14,36 +15,39 @@ public class Homepage {
     public Homepage() {
         this.movies = new ArrayList<>();
         this.seriesList = new ArrayList<>();
+        this.series = new ArrayList<>();
     }
 
     public void setup() {
         //String [] readData = io.readMediaData("data/")
-        ArrayList<String> movieData = io.readMediaData("movies.txt");
+        ArrayList<String> movieData = io.readMediaData("C:\\Users\\mjar\\Documents\\dev\\SP3-StudieGruppeA\\ChillFlix\\src\\main\\java\\org\\example\\movies.txt");
 
         for (String s : movieData) {
             String[] row = s.split(";");
             String name = row[0].trim();
             int releaseDate = Integer.parseInt((row[1]).trim());
             Set<String> genres = new HashSet<>(Arrays.asList(row[2].trim().split(",")));
-            String ratingString = row[3].trim().replace("," , ".");
+            String ratingString = row[3].trim().replace(",", ".");
             float rating = Float.parseFloat(ratingString);
 
             registerMovies(name, releaseDate, genres, rating);
         }
-        this.displayMovies();
+        //this.displayMovies();
 
-        ArrayList<String> seriesData = io.readMediaData("org/example/series.txt");
+        ArrayList<String> seriesData = io.readMediaData("C:\\Users\\mjar\\Documents\\dev\\SP3-StudieGruppeA\\ChillFlix\\src\\main\\java\\org\\example\\series.txt");
         for (String s : seriesData) {
             String[] row = s.split(";");
             String name = row[0];
             int releaseDateStart = Integer.parseInt(row[1].trim().split("-")[0]);
             int releaseDateEnd = Integer.parseInt(row[1].trim().split("-")[1]);
-            List<String> genres = new ArrayList<>(Arrays.asList(row[2].split(",")));
-            double rating = Double.parseDouble(row[3]);
-            String season = Arrays.toString(row[4].split(","));
-
+            List<String> genres = new ArrayList<>(Arrays.asList(row[2].trim().split(",")));
+            String ratingString = row[3].trim().replace(",", ".");
+            double rating = Double.parseDouble(ratingString);
+            String season = Arrays.toString(row[4].trim().split(","));
         }
+        displaySeries();
     }
+
 
 
     /*public void logInDialog() {
@@ -109,13 +113,22 @@ public class Homepage {
         }
     }*/
 
-    private void displayMovies(){
+    private void displayMovies() {
         String s = "\nAll movies:";
 
-        for (Movies movies : movies){
-            s = s.concat(movies.toString()+"\n");
+        for (Movies movies : movies) {
+            s = s.concat(movies.toString() + "\n");
         }
         ui.displayMsg(s);
+    }
+
+    private void displaySeries() {
+        String j = "\nAll series:";
+
+        for (Series series : series) {
+            j = j.concat(series.toString() + "\n");
+        }
+        ui.displayMsg(j);
     }
 }
 
