@@ -7,22 +7,11 @@
     <list default="true" id="3e123b07-b659-4084-aa15-22417251ebf1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Homepage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Series.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Series.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/series.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/series.txt" afterDir="false" />
     </list>
-    <list id="d7bb9322-c455-4548-bee4-378febc7d595" name="Changes by jonsi" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Movies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Movies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Series.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Series.java" afterDir="false" />
-    </list>
-    <list id="dbfca0ec-b9b4-4b0c-8a62-51f212de1c4f" name="Changes by marcushjorth" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Homepage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Movies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Movies.java" afterDir="false" />
-    </list>
+    <list id="d7bb9322-c455-4548-bee4-378febc7d595" name="Changes by jonsi" comment="" />
+    <list id="dbfca0ec-b9b4-4b0c-8a62-51f212de1c4f" name="Changes by marcushjorth" comment="" />
     <list id="e68fa153-cf58-4b6c-9ef9-990049813413" name="Changes by rebeccamaryburonsorensen" comment="" />
-    <list id="cc113478-b819-4377-9b89-c6d1536e980b" name="Changes by Rodney" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Homepage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/User.java" afterDir="false" />
-    </list>
+    <list id="cc113478-b819-4377-9b89-c6d1536e980b" name="Changes by Rodney" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,64 +29,31 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/org/example/Homepage.java">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="3" changelist="cc113478-b819-4377-9b89-c6d1536e980b" />
-        <range start1="40" end1="41" start2="41" end2="46" changelist="3e123b07-b659-4084-aa15-22417251ebf1" />
-        <range start1="43" end1="46" start2="48" end2="48" changelist="cc113478-b819-4377-9b89-c6d1536e980b" />
-        <range start1="47" end1="47" start2="49" end2="50" changelist="cc113478-b819-4377-9b89-c6d1536e980b" />
-        <range start1="49" end1="59" start2="52" end2="60" changelist="3e123b07-b659-4084-aa15-22417251ebf1" />
-        <range start1="60" end1="64" start2="61" end2="61" changelist="cc113478-b819-4377-9b89-c6d1536e980b" />
-        <range start1="65" end1="67" start2="62" end2="64" changelist="dbfca0ec-b9b4-4b0c-8a62-51f212de1c4f" />
-        <range start1="69" end1="73" start2="66" end2="66" changelist="cc113478-b819-4377-9b89-c6d1536e980b" />
-        <range start1="74" end1="92" start2="67" end2="86" changelist="cc113478-b819-4377-9b89-c6d1536e980b" />
-        <range start1="94" end1="95" start2="88" end2="88" changelist="cc113478-b819-4377-9b89-c6d1536e980b" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/org/example/Movies.java">
-      <ranges>
-        <range start1="9" end1="10" start2="9" end2="10" changelist="dbfca0ec-b9b4-4b0c-8a62-51f212de1c4f" />
-        <range start1="21" end1="22" start2="21" end2="23" changelist="d7bb9322-c455-4548-bee4-378febc7d595" />
-        <range start1="25" end1="26" start2="26" end2="27" changelist="d7bb9322-c455-4548-bee4-378febc7d595" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/org/example/Series.java">
-      <ranges>
-        <range start1="8" end1="9" start2="8" end2="10" changelist="3e123b07-b659-4084-aa15-22417251ebf1" />
-        <range start1="13" end1="14" start2="14" end2="15" changelist="3e123b07-b659-4084-aa15-22417251ebf1" />
-        <range start1="18" end1="19" start2="19" end2="21" changelist="3e123b07-b659-4084-aa15-22417251ebf1" />
-        <range start1="24" end1="25" start2="26" end2="27" changelist="d7bb9322-c455-4548-bee4-378febc7d595" />
-        <range start1="28" end1="29" start2="30" end2="31" changelist="d7bb9322-c455-4548-bee4-378febc7d595" />
-        <range start1="37" end1="38" start2="39" end2="40" changelist="3e123b07-b659-4084-aa15-22417251ebf1" />
-      </ranges>
-    </file>
-  </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2YR2Slb5iTphuA6P28yedVO9ib8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "SP3-Mateen",
-    "last_opened_file_path": "C:/Users/mjar/Downloads/100bedstefilm.txt",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;SP3-Mateen&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mjar/Downloads/100bedstefilm.txt&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -106,7 +62,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1700474077706</updated>
-      <workItem from="1700474078732" duration="15443000" />
+      <workItem from="1700474078732" duration="15473000" />
+      <workItem from="1700560765683" duration="424000" />
     </task>
     <servers />
   </component>
