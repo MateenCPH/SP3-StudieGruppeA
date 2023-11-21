@@ -1,35 +1,31 @@
 package org.example;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Homepage {
     FileIO io = new FileIO();
     private ArrayList<Movies> movies;
-    private ArrayList<Movies> watchedMovies;
-    private ArrayList<Movies> savedMovies;
     private ArrayList<Series> seriesList;
     private ArrayList<Series> watchedSeries;
     private ArrayList<Series> savedSeries;
     private TextUI ui = new TextUI();
     private User u = new User("Username", "Password");
 
-    public Homepage(){
+    public Homepage() {
         this.movies = new ArrayList<>();
-        this.watchedMovies = new ArrayList<>();
-        this.savedMovies = new ArrayList<>();
         this.seriesList = new ArrayList<>();
         this.watchedSeries = new ArrayList<>();
         this.savedSeries = new ArrayList<>();
     }
-
-    public void setup(){
+    public void setup() {
         //String [] readData = io.readMediaData("data/")
         ArrayList<String> movieData = io.readMediaData("org/example/movies.txt");
-            for (String s : movieData){
-                String [] row = s.split(";");
-                String name = row[0];
-                int releaseDate = Integer.parseInt(row[1]);
-                Set<String> genres = new HashSet<>(Arrays.asList(row[2].split(",")));
-                double rating = Double.parseDouble(row[3]);
+        for (String s : movieData) {
+            String[] row = s.split(";");
+            String name = row[0];
+            int releaseDate = Integer.parseInt(row[1]);
+            Set<String> genres = new HashSet<>(Arrays.asList(row[2].split(",")));
+            double rating = Double.parseDouble(row[3]);
 
                 registerMovies(name,releaseDate,genres,rating);
             }
@@ -92,6 +88,34 @@ public class Homepage {
     public void endStreming(){
 
     }
+    public void createAccount() {
+        String name = "";
+        String password = "";
+        name = ui.getInput(" Type Username");
+        if (name.length() > 15) {
+            System.out.println("User name is too long, try again");
+        } else {
+            password = ui.getInput("Type Password");
+            if (password.length() <= 8) {
+                System.out.println("New account is now registered");
+            }// hvordan får man tilføjet den nye bruger til userList.txt?
+        }
+    }
+    public Map<String, User> getUserMap() {
+        return userMap;
+    }
 
-    //Rodney laver USECASE2 = RegisterUser
+    public void loginAccount() {
+        String inputUsername = ui.getInput("Enter your username:");
+        String inputPassword = ui.getInput("Enter your password:");
+
+        User user = userMap.get(inputUsername);
+
+        if (user != null && user.getPassword().equals(inputPassword)) {
+            System.out.println("Login Successful!");
+        } else {
+            System.out.println("Invalid username or password. Please try again.");
+        }
+    }
 }
+
