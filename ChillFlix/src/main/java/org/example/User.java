@@ -1,7 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.Map;
+import java.util.HashMap;
 
 public class User {
     private final String username;
@@ -18,6 +18,10 @@ public class User {
         this.savedMovies = new ArrayList<>();
         this.watchedSeries =  new ArrayList<>();
         this.savedSeries = new ArrayList<>();
+    }
+    public void registerUser(){
+
+        System.out.println("Please create an account with a username & password.");
     }
 
     public void addToWatchedMovies(Movies movies){

@@ -19,11 +19,12 @@ public class Movies implements Media {
 
     public void play(User user, Movies movies) {
         System.out.println(movieName + " is now playing");
-        user.addToWatchedMovies(movies);
+        ArrayList<Movies> m = new ArrayList<>();
+        user.addToWatchedMovies(m, movies);
     }
 
     public void addToUserList(User user, Movies movies) {
-        user.addToWatchedMovies(movies);
+        user.addToWatchedMovies(ArrayList<>, movies);
     }
 
     public void removeFromUserList() {

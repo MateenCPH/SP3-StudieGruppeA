@@ -1,6 +1,8 @@
 package org.example;
+
+import java.util.*;
 import java.util.HashMap;
-import java.util.Map;
+
 
 public class Homepage {
     FileIO io = new FileIO();
@@ -16,20 +18,28 @@ public class Homepage {
     public void setup() {
         //String [] readData = io.readMediaData("data/")
         ArrayList<String> movieData = io.readMediaData("org/example/movies.txt");
-        for (String s : movieData) {
-            String[] row = s.split(";");
-            String name = row[0];
-            int releaseDate = Integer.parseInt(row[1]);
-            Set<String> genres = new HashSet<>(Arrays.asList(row[2].split(",")));
-            double rating = Double.parseDouble(row[3]);
 
-            registerMovies(name, releaseDate, genres, rating);
-        }
-        ArrayList<String> seriesData = io.readMediaData("org/example/series.txt");
-        for (String s : seriesData) {
-            String[] row = s.split(";");
-            String name = row[0];
-            int releaseDate = Integer.parseInt(row[1]);
+            for (String s : movieData){
+                String [] row = s.split(";");
+                String name = row[0];
+                int releaseDate = Integer.parseInt(row[1]);
+                Set<String> genres = new HashSet<>(Arrays.asList(row[2].split(",")));
+                double rating = Double.parseDouble(row[3]);
+
+                registerMovies(name,releaseDate,genres,rating);
+            }
+
+            ArrayList<String> seriesData = io.readMediaData("org/example/series.txt");
+            for (String s : seriesData) {
+                String [] row = s.split(";");
+                String name = row[0];
+                int releaseDateStart = Integer.parseInt(row[1].trim().split("-")[0]);
+                int releaseDateEnd = Integer.parseInt(row[1].trim().split("-")[1]);
+                List<String> genres = new ArrayList<>(Arrays.asList(row[2].split(",")));
+                double rating = Double.parseDouble(row[3]);
+                int season =
+
+            }
         }
     }
 
