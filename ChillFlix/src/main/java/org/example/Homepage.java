@@ -6,16 +6,12 @@ public class Homepage {
     FileIO io = new FileIO();
     private ArrayList<Movies> movies;
     private ArrayList<Series> seriesList;
-    private ArrayList<Series> watchedSeries;
-    private ArrayList<Series> savedSeries;
-    private TextUI ui = new TextUI();
-    private User u = new User("Username", "Password");
+    private final TextUI ui = new TextUI();
+    private final User u = new User("Username", "Password");
 
     public Homepage() {
         this.movies = new ArrayList<>();
         this.seriesList = new ArrayList<>();
-        this.watchedSeries = new ArrayList<>();
-        this.savedSeries = new ArrayList<>();
     }
     public void setup() {
         //String [] readData = io.readMediaData("data/")
@@ -27,47 +23,32 @@ public class Homepage {
             Set<String> genres = new HashSet<>(Arrays.asList(row[2].split(",")));
             double rating = Double.parseDouble(row[3]);
 
-                registerMovies(name,releaseDate,genres,rating);
-            }
-
-            ArrayList<String> seriesData = io.readMediaData("org/example/series.txt");
-            for (String s : seriesData) {
-                String [] row = s.split(";");
-                String name = row[0];
-                int releaseDate = Integer.parseInt(row[1]);
-
-            }
-
-
-
+            registerMovies(name, releaseDate, genres, rating);
         }
+        ArrayList<String> seriesData = io.readMediaData("org/example/series.txt");
+        for (String s : seriesData) {
+            String[] row = s.split(";");
+            String name = row[0];
+            int releaseDate = Integer.parseInt(row[1]);
+        }
+    }
 
-        public void logInDialog(){
+    public void logInDialog() {
         String input = "";
         input = ui.getInput("Login or New account. L/N: ");
         if (!input.equals("L")) {
-            u.createAccount();
+            createAccount();
+        } else {
+            loginAccount();
         }
-        else {
-            u.loginAccount();
+    }
 
-        }
-            }
-
-
-
-
-
-        private void registerMovies(String name, int releaseDate, Set<String>genres, double rating){
-        Movies m = new Movies(name,releaseDate,genres,rating);
+    private void registerMovies(String name, int releaseDate, Set<String> genres, double rating) {
+        Movies m = new Movies(name, releaseDate, genres, rating);
         movies.add(m);
-        }
+    }
 
-
-
-
-
-        public ArrayList<Movies> getMovies() {
+    public ArrayList<Movies> getMovies() {
         return movies;
     }
     public ArrayList<Movies> getWatchedMovies(){
@@ -79,13 +60,7 @@ public class Homepage {
     public ArrayList<Series> getSerieList(){
         return seriesList;
     }
-    public ArrayList<Series> getWatchedSeries(){
-        return watchedSeries;
-    }
-    public ArrayList<Series> getSavedSeries(){
-        return savedSeries;
-    }
-    public void endStreming(){
+    public void endStreaming() {
 
     }
     public void createAccount() {

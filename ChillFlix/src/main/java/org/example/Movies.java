@@ -7,7 +7,7 @@ import java.util.Set;
 public class Movies implements Media {
     private final String movieName;
     private final int releaseDate;
-    private Set<String> genre;
+    private final Set<String> genre;
     private final double rating;
 
     public Movies(String movieName, int releaseDate, Set<String>genre, double rating){
@@ -38,4 +38,5 @@ public class Movies implements Media {
     public String toString() {
         return "Movie name: " + movieName + " Category: " + genre + " releaseDate: " + releaseDate + " Rating: " + rating;
     }
+
 }

@@ -4,13 +4,12 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class User {
-    private String username;
-    private String password;
-    ArrayList<Movies> watchedMovies;
-    ArrayList<Movies> savedMovies;
-    ArrayList<Series> watchedSeries;
-    ArrayList<Series> savedSeries;
-    private TextUI ui = new TextUI();
+    private final String username;
+    private final String password;
+    private ArrayList<Movies> watchedMovies;
+    private ArrayList<Movies> savedMovies;
+    private final ArrayList<Series> watchedSeries;
+    private final ArrayList<Series> savedSeries;
 
     public User(String username, String password){
         this.username = username;
@@ -21,32 +20,7 @@ public class User {
         this.savedSeries = new ArrayList<>();
     }
 
-    public void createAccount() {
-        String name = "";
-        String code = "";
-        name = ui.getInput(" Type Username");
-        if (name.length() > 15) {
-            System.out.println("User name is too long, try again");
-        } else {
-            code = ui.getInput("Type Password");
-            if (code.length() <= 8) {
-                System.out.println("New account is now registered");
-            }// hvordan får man tilføjet den nye bruger til userList.txt?
-        }
-    }
-
-
-
-
-
-
-
-
-    public void loginAccount(){
-
-    }
-
-    public void addToWatchedMovies(ArrayList<Movies> watchedMovies, Movies movies){
+    public void addToWatchedMovies(Movies movies){
         watchedMovies.add(movies);
     }
 
@@ -54,7 +28,7 @@ public class User {
         savedMovies.add(movies);
     }
 
-    public void addToWatchedSeries(ArrayList<Series> watchedSeries,Series series){
+    public void addToWatchedSeries(Series series){
         watchedSeries.add(series);
     }
 
