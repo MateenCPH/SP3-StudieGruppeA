@@ -45,10 +45,13 @@ public class Homepage {
 
     public void logInDialog() {
         String input = "";
-        input = ui.getInput("Login or New account. L/N: ");
-        if (!input.equals("L")) {
-            createAccount();
-        } else {
+        ui.displayMessage("Welcome to ChillFix");
+        ui.displayMessage("Would you like to login or create a new user?");
+        input = ui.getInput("Press 'L' for Login or 'N' to create a new user");
+        ui.displayMessage(" ");
+        if (input.equalsIgnoreCase("N")) {
+            createNewUser();
+        } else if (input.equalsIgnoreCase("L")) {
             loginAccount();
         }
     }

@@ -1,10 +1,8 @@
 package org.example;
 
-
-
 import java.util.Set;
 
-public class Movies implements Media {
+public class Movies {
     private final String movieName;
     private final int releaseDate;
     private final Set<String> genre;
@@ -17,18 +15,9 @@ public class Movies implements Media {
         this.rating = rating;
     }
 
-    public void play(User user, Movies movies) {
+    public  void play(User user) {
         System.out.println(movieName + " is now playing");
-        ArrayList<Movies> m = new ArrayList<>();
-        user.addToWatchedMovies(m, movies);
-    }
-
-    public void addToUserList(User user, Movies movies) {
-        user.addToWatchedMovies(ArrayList<>, movies);
-    }
-
-    public void removeFromUserList() {
-
+        user.addToWatchedMovies(this);
     }
 
     public Set<String> getGenre() {
@@ -39,5 +28,4 @@ public class Movies implements Media {
     public String toString() {
         return "Movie name: " + movieName + " Category: " + genre + " releaseDate: " + releaseDate + " Rating: " + rating;
     }
-
 }
