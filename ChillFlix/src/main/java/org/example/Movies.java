@@ -1,7 +1,7 @@
 package org.example;
 
 
-import java.util.ArrayList;
+
 import java.util.Set;
 
 public class Movies implements Media {
@@ -39,4 +39,5 @@ public class Movies implements Media {
     public String toString() {
         return "Movie name: " + movieName + " Category: " + genre + " releaseDate: " + releaseDate + " Rating: " + rating;
     }
+
 }
