@@ -2,16 +2,17 @@ package org.example;
 
 
 
+import java.util.ArrayList;
 import java.util.Set;
 
 public class Movies implements Media {
     private final String movieName;
     private final int releaseDate;
-    private final Set<String> genre;
+    private final ArrayList<String> genre;
     private final float rating;
     protected TextUI ui = new TextUI();
 
-    public Movies(String movieName, int releaseDate, Set<String>genre, float rating){
+    public Movies(String movieName, int releaseDate, ArrayList<String>genre, float rating){
         this.movieName = movieName;
         this.genre = genre;
         this.releaseDate = releaseDate;
@@ -32,7 +33,7 @@ public class Movies implements Media {
 
     }
 
-    public Set<String> getGenre() {
+    public ArrayList<String> getGenre() {
         return genre;
     }
 

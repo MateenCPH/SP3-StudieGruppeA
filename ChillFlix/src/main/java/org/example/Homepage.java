@@ -26,15 +26,15 @@ public class Homepage {
             String[] row = s.split(";");
             String name = row[0].trim();
             int releaseDate = Integer.parseInt((row[1]).trim());
-            Set<String> genres = new HashSet<>(Arrays.asList(row[2].trim().split(",")));
+            ArrayList<String> genres = new ArrayList<>(Arrays.asList(row[2].trim().split(",")));
             String ratingString = row[3].trim().replace(",", ".");
             float rating = Float.parseFloat(ratingString);
 
             registerMovies(name, releaseDate, genres, rating);
         }
-        //this.displayMovies();
+        this.displayMovies();
 
-        ArrayList<String> seriesData = io.readMediaData("C:\\Users\\mjar\\Documents\\dev\\SP3-StudieGruppeA\\ChillFlix\\src\\main\\java\\org\\example\\series.txt");
+        /*ArrayList<String> seriesData = io.readMediaData("C:\\Users\\mjar\\Documents\\dev\\SP3-StudieGruppeA\\ChillFlix\\src\\main\\java\\org\\example\\series.txt");
         for (String s : seriesData) {
             String[] row = s.split(";");
             String name = row[0];
@@ -45,7 +45,7 @@ public class Homepage {
             double rating = Double.parseDouble(ratingString);
             String season = Arrays.toString(row[4].trim().split(","));
         }
-        displaySeries();
+        displaySeries();*/
     }
 
 
@@ -60,7 +60,7 @@ public class Homepage {
         }
     }*/
 
-    private void registerMovies(String name, int releaseDate, Set<String> genres, float rating) {
+    private void registerMovies(String name, int releaseDate, ArrayList<String> genres, float rating) {
         Movies m = new Movies(name, releaseDate, genres, rating);
         movies.add(m);
     }
@@ -114,7 +114,7 @@ public class Homepage {
     }*/
 
     private void displayMovies() {
-        String s = "\nAll movies:";
+        String s = "\nAll movies:\n";
 
         for (Movies movies : movies) {
             s = s.concat(movies.toString() + "\n");
