@@ -4,7 +4,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.Set;
 
-public class Movies implements Media {
+public abstract class Movies implements Media {
     private final String movieName;
     private final int releaseDate;
     private final Set<String> genre;
@@ -24,7 +24,7 @@ public class Movies implements Media {
     }
 
     public void addToUserList(User user, Movies movies) {
-        user.addToWatchedMovies(ArrayList<>, movies);
+        //user.addToWatchedMovies(ArrayList<>, movies);
     }
 
     public void removeFromUserList() {

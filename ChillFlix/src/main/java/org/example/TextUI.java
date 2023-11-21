@@ -6,7 +6,7 @@ public class TextUI {
     private Scanner scan = new Scanner(System.in);
 
     public String getInput(String msg){
-        this.(msg);
+        this.displayMsg(msg);
         return scan.nextLine();
     }
 

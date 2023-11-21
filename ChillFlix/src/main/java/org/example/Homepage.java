@@ -43,7 +43,7 @@ public class Homepage {
                 int releaseDateEnd = Integer.parseInt(row[1].trim().split("-")[1]);
                 List<String> genres = new ArrayList<>(Arrays.asList(row[2].split(",")));
                 double rating = Double.parseDouble(row[3]);
-                int season = 
+                String season = Arrays.toString(row[4].split(","));
 
             }
         }

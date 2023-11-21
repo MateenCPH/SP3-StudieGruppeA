@@ -24,11 +24,11 @@ public class Series implements Media{
 
     public void play(User user, Series series) {
         System.out.println(seriesName + " " + season + " " + episode + " is now playing");
-        user.addToWatchedSeries(ArrayList<>, series);
+        //user.addToWatchedSeries(ArrayList<>, series);
     }
 
     public void addToUserList(User user, Series series) {
-        user.addToSavedSeries(ArrayList<>, series);
+        //user.addToSavedSeries(ArrayList<>, series);
     }
 
     public void removeFromUserList(User user, Series series) {
