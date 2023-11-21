@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.ArrayList;
 
-public class Series implements Media{
+public abstract class Series implements Media{
 
     private final String seriesName;
     private ArrayList<String> category = new ArrayList<>();

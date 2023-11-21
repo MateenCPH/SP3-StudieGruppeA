@@ -4,26 +4,27 @@ package org.example;
 
 import java.util.Set;
 
-public abstract class Movies implements Media {
+public class Movies implements Media {
     private final String movieName;
     private final int releaseDate;
     private final Set<String> genre;
-    private final double rating;
+    private final float rating;
+    protected TextUI ui = new TextUI();
 
-    public Movies(String movieName, int releaseDate, Set<String>genre, double rating){
+    public Movies(String movieName, int releaseDate, Set<String>genre, float rating){
         this.movieName = movieName;
         this.genre = genre;
         this.releaseDate = releaseDate;
         this.rating = rating;
     }
 
-    public void play(User user, Movies movies) {
-        System.out.println(movieName + " is now playing");
-        ArrayList<Movies> m = new ArrayList<>();
-        user.addToWatchedMovies(m, movies);
+    public void play() {
+        //ui.displayMsg(movies.movieName + " is now playing");
+        //ArrayList<Movies> m = new ArrayList<>();
+        //user.addToWatchedMovies(m, movies);
     }
 
-    public void addToUserList(User user, Movies movies) {
+    public void addToUserList() {
         //user.addToWatchedMovies(ArrayList<>, movies);
     }
 
@@ -37,7 +38,7 @@ public abstract class Movies implements Media {
 
     @Override
     public String toString() {
-        return "Movie name: " + movieName + " Category: " + genre + " releaseDate: " + releaseDate + " Rating: " + rating;
+        return "Movie name: " + movieName + " Genre: " + genre + " releaseDate: " + releaseDate + " Rating: " + rating;
     }
 
 }
