@@ -1,29 +1,29 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Map;
 
-public class Series implements Media{
+public class Series implements Media {
 
     private final String seriesName;
     private final ArrayList<String> genre;
     private final int releaseDateStart;
     private final int releaseDateEnd;
     private final float rating;
-    private final int season;
-    private final int episode;
+    protected static final int ONGOING = Integer.MAX_VALUE;
+    private final Map<Integer, Integer> episodesPerSeason;
 
-    public Series(String seriesName, int releaseDateStart, int releaseDateEnd, ArrayList<String> genre, float rating, int season, int episode){
+    public Series(String seriesName, int releaseDateStart, int releaseDateEnd, ArrayList<String> genre, float rating, Map<Integer, Integer> episodesPerSeason) {
         this.seriesName = seriesName;
-        this.season = season;
-        this.episode = episode;
-        this.genre = genre;
         this.releaseDateStart = releaseDateStart;
-        this.releaseDateEnd=releaseDateEnd;
+        this.releaseDateEnd = releaseDateEnd;
+        this.genre = genre;
         this.rating = rating;
+        this.episodesPerSeason = episodesPerSeason;
     }
 
     public void play() {
-        System.out.println(seriesName + " " + season + " " + episode + " is now playing");
+        //System.out.println(seriesName + " " + season + " " + episode + " is now playing");
         //user.addToWatchedSeries(ArrayList<>, series);
     }
 
@@ -35,8 +35,16 @@ public class Series implements Media{
 
     }
 
+    public boolean isOnGoing() {
+        return releaseDateEnd == ONGOING;
+    }
+
+    public Map<Integer, Integer> getEpisodesPerSeason() {
+        return episodesPerSeason;
+    }
+
     @Override
     public String toString() {
-        return "Series name: " + seriesName + " Season: " + season + " Episode: " + episode + " Genre: " + genre + " ReleaseDate: " + releaseDateStart + " Rating: " + rating;
+        return "Series name: " + seriesName + " | Release date start: " + releaseDateStart + " Release date end: " + (releaseDateEnd == Series.ONGOING ? "Ongoing" : String.valueOf(releaseDateEnd)) + " | Genre: " + genre + " Rating: " + rating + episodesPerSeason;
     }
 }
