@@ -7,8 +7,7 @@
     <list default="true" id="3e123b07-b659-4084-aa15-22417251ebf1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Homepage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Series.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Series.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/series.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/series.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Movies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Movies.java" afterDir="false" />
     </list>
     <list id="d7bb9322-c455-4548-bee4-378febc7d595" name="Changes by jonsi" comment="" />
     <list id="dbfca0ec-b9b4-4b0c-8a62-51f212de1c4f" name="Changes by marcushjorth" comment="" />
@@ -28,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="SP3_Marcus" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
