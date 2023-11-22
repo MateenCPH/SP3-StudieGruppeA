@@ -12,6 +12,7 @@ public class Homepage {
     private final TextUI ui = new TextUI();
     private final User u = new User("Username", "Password");
     ArrayList<User> userList = new ArrayList<>();
+    ArrayList<String> menuOptions =  new ArrayList<>();
 
     public Homepage() {
         this.movies = new ArrayList<>();
@@ -81,7 +82,7 @@ public class Homepage {
 
     public void logInDialog() {
         String input = "";
-        ui.displayMsg("Welcome to ChillFix");
+        ui.displayMsg("Welcome to ChillFlix");
         ui.displayMsg("Would you like to login or create a new user?");
         input = ui.getInput("Press 'L' for Login or 'N' to create a new user");
         ui.displayMsg(" ");
@@ -121,6 +122,57 @@ public class Homepage {
         ui.displayMsg("");
         System.out.println("Invalid username or password. Please try again.");
         loginAccount();
+    }
+
+    public void menuDialog(){
+        ui.displayMsg("Choose one of the following category's ");
+        categoryMenu();
+        String input = ui.getInput("");
+        if (input.equalsIgnoreCase("Specific Movies")){ // søg efter en bestemt film
+            ui.displayMsg("these movies are super good man");
+        } else if (input.equalsIgnoreCase("Categorys")){ // søg efter alle genre
+            ui.displayMsg("Craaazy Categorys daaawg");
+        } else if (input.equalsIgnoreCase("Watched Movies")) { // alle sete film for brugeren
+            ui.displayMsg("U have watched these movies... gang gang");
+        } else if (input.equalsIgnoreCase("Saved Movies")) { // alle gemte film for brugeren
+            ui.displayMsg("Why did u save all these movies??..... skrrt");
+        } else {
+            ui.displayMsg("You didn't choose an existing category, try again noob");
+            ui.displayMsg("");
+            menuDialog();
+        }
+    }
+
+    public void categoryMenu() {
+        menuOptions.add("Best Movies");
+        menuOptions.add("Category's");
+        menuOptions.add("Watched Movies");
+        menuOptions.add("Saved Movies");
+        System.out.println(menuOptions);
+    }
+
+    public void watchedMovies(){
+
+    }
+    public void movieCategory(){
+
+    }
+
+    public void SearchMovie(){
+        displayMovies();
+        ui.displayMsg("");
+        String input = ui.getInput("Choose a movie");
+        if (input.equalsIgnoreCase("")){
+
+        }
+    }
+
+    public void backToMenu(){
+        menuDialog();
+    }
+
+    public void endApplication(){
+
     }
 
     private void registerMovies(String name, int releaseDate, ArrayList<String> genres, float rating) {
