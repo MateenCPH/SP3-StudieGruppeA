@@ -1,14 +1,15 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Map;
 
 public class User {
-    private final String username;
-    private final String password;
+    private String username;
+    private String password;
+
     private ArrayList<Movies> watchedMovies;
     private ArrayList<Movies> savedMovies;
-    private final ArrayList<Series> watchedSeries;
+    private ArrayList<Series> watchedSeries;
     private final ArrayList<Series> savedSeries;
 
     public User(String username, String password){
@@ -24,24 +25,40 @@ public class User {
         System.out.println("Please create an account with a username & password.");
     }
 
-    public void addToWatchedMovies(Movies movies){
+    public void addToWatchedMovies(Movies movies) {
         watchedMovies.add(movies);
     }
 
-    public void addToSavedMovies(ArrayList<Movies> savedMovies, Movies movies){
+    public void addToSavedMovies(Movies movies) {
         savedMovies.add(movies);
     }
 
-    public void addToWatchedSeries(Series series){
+    public void removeFromSavedMovies(Movies movies) {
+        savedMovies.remove(movies);
+    }
+
+    public void addToWatchedSeries(Series series) {
         watchedSeries.add(series);
     }
 
-    public void addToSavedSeries(ArrayList<Series> savedSeries, Series series){
+    public void addToSavedSeries(Series series) {
         savedSeries.add(series);
     }
 
+    public void removeFromSavedSeries(Series series) {
+        savedSeries.remove(series);
+    }
 
-
-
-
+    public String getUsername(){
+        return username;
+    }
+    public String getPassword(){
+        return password;
+    }
+    public void setUsername(String username){
+        this.username = username;
+    }
+    public void setPassword(String password){
+        this.password = password;
+    }
 }

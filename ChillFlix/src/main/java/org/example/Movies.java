@@ -39,7 +39,7 @@ public class Movies implements Media {
 
     @Override
     public String toString() {
-        return "Movie name: " + movieName + " Genre: " + genre + " releaseDate: " + releaseDate + " Rating: " + rating;
+        return "Movie name: " + movieName + " | Genre: " + genre + " releaseDate: " + releaseDate + " Rating: " + rating;
     }
 
 }

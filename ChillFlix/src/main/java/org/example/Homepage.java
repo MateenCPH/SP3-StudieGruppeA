@@ -11,6 +11,7 @@ public class Homepage {
     private ArrayList<Series> seriesList;
     private final TextUI ui = new TextUI();
     private final User u = new User("Username", "Password");
+    ArrayList<User> userList = new ArrayList<>();
 
     public Homepage() {
         this.movies = new ArrayList<>();
@@ -34,7 +35,7 @@ public class Homepage {
         }
         this.displayMovies();
 
-        /*ArrayList<String> seriesData = io.readMediaData("C:\\Users\\mjar\\Documents\\dev\\SP3-StudieGruppeA\\ChillFlix\\src\\main\\java\\org\\example\\series.txt");
+        ArrayList<String> seriesData = io.readMediaData("C:\\Users\\mjar\\Documents\\dev\\SP3-StudieGruppeA\\ChillFlix\\src\\main\\java\\org\\example\\series.txt");
         for (String s : seriesData) {
             String[] row = s.split(";");
             String name = row[0];
@@ -45,20 +46,52 @@ public class Homepage {
             double rating = Double.parseDouble(ratingString);
             String season = Arrays.toString(row[4].trim().split(","));
         }
-        displaySeries();*/
+        displaySeries();
     }
 
-
-
-    /*public void logInDialog() {
+    public void logInDialog() {
         String input = "";
-        input = ui.getInput("Login or New account. L/N: ");
-        if (!input.equals("L")) {
+        ui.displayMsg("Welcome to ChillFix");
+        ui.displayMsg("Would you like to login or create a new user?");
+        input = ui.getInput("Press 'L' for Login or 'N' to create a new user");
+        ui.displayMsg(" ");
+        if (input.equalsIgnoreCase("N")) {
             createAccount();
-        } else {
+        } else if (input.equalsIgnoreCase("L")) {
             loginAccount();
+        } else {
+            ui.displayMsg("Please only enter 'N' or 'L'");
+            logInDialog();
         }
-    }*/
+    }
+
+    public void createAccount() {
+        String newUsername = ui.getInput("Enter a new username:");
+        String newPassword = ui.getInput("Enter a new password:");
+
+        User newUser = new User(newUsername, newPassword);
+        userList.add(newUser);
+        //saveUserList();
+        ui.displayMsg("");
+        ui.displayMsg("New user created successfully");
+        loginAccount();
+    }
+
+    public void loginAccount() {
+        String inputUserName = ui.getInput("Enter your username:");
+        String inputPassword = ui.getInput("Enter your password:");
+
+        for (User user : userList) {
+            if (user.getUsername().equals(inputUserName) && user.getPassword().equals(inputPassword)) {
+                System.out.println("Welcome " + inputUserName);
+
+                return;
+            }
+        }
+        ui.displayMsg("");
+        System.out.println("Invalid username or password. Please try again.");
+        loginAccount();
+    }
 
     private void registerMovies(String name, int releaseDate, ArrayList<String> genres, float rating) {
         Movies m = new Movies(name, releaseDate, genres, rating);
@@ -82,36 +115,6 @@ public class Homepage {
     public void endStreaming() {
 
     }
-
-    public void createAccount() {
-        String name = "";
-        String password = "";
-        name = ui.getInput(" Type Username");
-        if (name.length() > 15) {
-            System.out.println("User name is too long, try again");
-        } else {
-            password = ui.getInput("Type Password");
-            if (password.length() <= 8) {
-                System.out.println("New account is now registered");
-            }// hvordan får man tilføjet den nye bruger til userList.txt?
-        }
-    }
-    /*public Map<String, User> getUserMap() {
-        return userMap;
-    }
-
-    public void loginAccount() {
-        String inputUsername = ui.getInput("Enter your username:");
-        String inputPassword = ui.getInput("Enter your password:");
-
-        User user = userMap.get(inputUsername);
-
-        if (user != null && user.getPassword().equals(inputPassword)) {
-            System.out.println("Login Successful!");
-        } else {
-            System.out.println("Invalid username or password. Please try again.");
-        }
-    }*/
 
     private void displayMovies() {
         String s = "\nAll movies:\n";
