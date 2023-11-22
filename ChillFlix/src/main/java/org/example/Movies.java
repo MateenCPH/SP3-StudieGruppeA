@@ -5,7 +5,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.Set;
 
-public class Movies implements Media {
+public class Movies {
     private final String movieName;
     private final int releaseDate;
     private final ArrayList<String> genre;

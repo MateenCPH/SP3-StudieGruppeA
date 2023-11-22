@@ -3,7 +3,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class Series implements Media {
+public class Series {
 
     private final String seriesName;
     private final ArrayList<String> genre;
