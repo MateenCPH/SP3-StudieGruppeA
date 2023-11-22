@@ -39,12 +39,42 @@ public class Homepage {
         for (String s : seriesData) {
             String[] row = s.split(";");
             String name = row[0];
-            int releaseDateStart = Integer.parseInt(row[1].trim().split("-")[0]);
-            int releaseDateEnd = Integer.parseInt(row[1].trim().split("-")[1]);
-            List<String> genres = new ArrayList<>(Arrays.asList(row[2].trim().split(",")));
+            String[] releaseDates = row[1].split("-");
+            int releaseDateStart, releaseDateEnd;
+            try {
+                releaseDateStart = Integer.parseInt(releaseDates[0].trim());
+            } catch (NumberFormatException e) {
+                System.err.println("Error parsing release date start for series: " + name);
+                continue;
+            }
+            if (row[1].endsWith("-")) {
+                releaseDateEnd = Series.ONGOING;
+            } else if (releaseDates.length > 1 && !releaseDates[1].trim().isEmpty()) {
+                try {
+                    releaseDateEnd = Integer.parseInt(releaseDates[1].trim());
+                } catch (NumberFormatException e) {
+                    System.err.println("Error parsing release date end for series: " + name);
+                    continue;
+                }
+            } else {
+                releaseDateEnd = Series.ONGOING;
+            }
+            //int releaseDateStart = Integer.parseInt(releaseDates[0]);
+            //int releaseDateEnd = row[1].endsWith("-") ? Series.ONGOING : Integer.parseInt(releaseDates[1].trim());
+            ArrayList<String> genre = new ArrayList<>(Arrays.asList(row[2].trim().split(",")));
             String ratingString = row[3].trim().replace(",", ".");
-            double rating = Double.parseDouble(ratingString);
-            String season = Arrays.toString(row[4].trim().split(","));
+            float rating = Float.parseFloat(ratingString);
+
+            String seasonsAndEpisodes = row[4];
+            Map<Integer, Integer> episodesPerSeason = new HashMap<>();
+            String[] seasonEpisodesPairs = seasonsAndEpisodes.trim().split(",");
+            for (String seasonEpisodesPair : seasonEpisodesPairs) {
+                String[] seasonEpisode = seasonEpisodesPair.split("-");
+                int seasonNumber = Integer.parseInt(seasonEpisode[0].trim());
+                int episodeNumber = Integer.parseInt(seasonEpisode[1].trim());
+                episodesPerSeason.put(seasonNumber, episodeNumber);
+            }
+            registerSeries(name,releaseDateStart,releaseDateEnd,genre,rating,episodesPerSeason);
         }
         displaySeries();
     }
@@ -96,6 +126,11 @@ public class Homepage {
     private void registerMovies(String name, int releaseDate, ArrayList<String> genres, float rating) {
         Movies m = new Movies(name, releaseDate, genres, rating);
         movies.add(m);
+    }
+
+    private void registerSeries(String seriesName, int releaseDateStart, int releaseDateEnd, ArrayList<String> genre, float rating, Map<Integer, Integer> episodesPerSeason) {
+        Series s = new Series(seriesName, releaseDateStart, releaseDateEnd, genre, rating, episodesPerSeason);
+        series.add(s);
     }
 
     public ArrayList<Movies> getMovies() {
