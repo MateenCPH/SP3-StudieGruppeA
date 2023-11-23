@@ -6,7 +6,7 @@ import java.util.Map;
 public class User {
     private String username;
     private String password;
-    private TextUI ui = new TextUI();
+    private final TextUI ui = new TextUI();
     protected ArrayList<Movies> watchedMovies;
     private ArrayList<Movies> savedMovies;
     protected ArrayList<Series> watchedSeries;

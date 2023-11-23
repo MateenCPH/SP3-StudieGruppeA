@@ -8,11 +8,11 @@ import java.util.List;
 public class Media {
 
     private final String mediaName;
-    private final int releaseDateStart;
+    private final String releaseDateStart;
     protected final ArrayList<String> genre;
-    private final float rating;
+    private final double rating;
 
-    public Media(String mediaName, int releaseDateStart, ArrayList<String> genre, float rating) {
+    public Media(String mediaName, String releaseDateStart, ArrayList<String> genre, double rating) {
         this.mediaName = mediaName;
         this.releaseDateStart = releaseDateStart;
         this.genre = genre;
@@ -23,7 +23,7 @@ public class Media {
         return mediaName;
     }
 
-    public int getReleaseDateStart() {
+    public String getReleaseDateStart() {
         return releaseDateStart;
     }
 

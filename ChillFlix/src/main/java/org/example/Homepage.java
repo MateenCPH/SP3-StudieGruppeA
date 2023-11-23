@@ -25,27 +25,27 @@ public class Homepage {
         for (String s : movieData) {
             String[] row = s.split(";");
             String name = row[0].trim();
-            int releaseDate = Integer.parseInt((row[1]).trim());
+            String releaseDate = row[1].trim();
             String[] genres = row[2].trim().split(",");
             ArrayList<String> genre = new ArrayList<>(List.of(genres));
             String ratingString = row[3].trim().replace(",", ".");
-            float rating = Float.parseFloat(ratingString);
+            double rating = Double.parseDouble(ratingString);
 
             registerMovies(name, releaseDate, genre, rating);
         }
-        this.displayMovies();
+        //this.displayMovies();
 
         ArrayList<String> seriesData = io.readMediaData("C:\\Users\\matee\\Documents\\Intellij\\SP3-StudieGruppeA\\ChillFlix\\src\\main\\java\\data\\series.txt");
         for (String s : seriesData) {
             String[] row = s.split(";");
             String name = row[0];
-            int runTime = Integer.parseInt(Integer.parseInt(row[1].trim()) + " this series is ongoing");
+            String runTime = row[1].trim();
 
             String[] genres = row[2].split(",");
             ArrayList<String> genre = new ArrayList<>(List.of(genres));
 
             String ratingString = row[3].trim().replace(",", ".");
-            float rating = Float.parseFloat(ratingString);
+            double rating = Double.parseDouble(ratingString);
 
             String seasonsAndEpisodes = row[4];
             Map<Integer, Integer> episodesPerSeason = new HashMap<>();
@@ -58,7 +58,7 @@ public class Homepage {
             }
             registerSeries(name, runTime, genre, rating, episodesPerSeason);
         }
-        this.displaySeries();
+        //this.displaySeries();
     }
 
     public void logInDialog() {
@@ -196,12 +196,12 @@ public class Homepage {
 
     }
 
-    private void registerMovies(String name, int releaseDate, ArrayList<String> genres, float rating) {
+    private void registerMovies(String name, String releaseDate, ArrayList<String> genres, double rating) {
         Movies m = new Movies(name, releaseDate, genres, rating);
         movies.add(m);
     }
 
-    private void registerSeries(String seriesName, int releaseDateStart, ArrayList<String> genre, float rating, Map<Integer, Integer> episodesPerSeason) {
+    private void registerSeries(String seriesName, String releaseDateStart, ArrayList<String> genre, double rating, Map<Integer, Integer> episodesPerSeason) {
         Series s = new Series(seriesName, releaseDateStart, genre, rating, episodesPerSeason);
         series.add(s);
     }
@@ -226,7 +226,7 @@ public class Homepage {
     }
 
     private void displayMovies() {
-        String s = "\nAll movies:\n";
+        String s = "All movies:\n";
 
         for (Movies movies : movies) {
             s = s.concat(movies.toString() + "\n");
@@ -235,7 +235,7 @@ public class Homepage {
     }
 
     private void displaySeries() {
-        String j = "\nAll series:";
+        String j = "All series:\n";
 
         for (Series series : series) {
             j = j.concat(series.toString() + "\n");
