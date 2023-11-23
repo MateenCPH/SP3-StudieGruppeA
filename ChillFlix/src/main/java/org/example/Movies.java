@@ -1,22 +1,13 @@
 package org.example;
 
 
-
 import java.util.ArrayList;
 import java.util.Set;
 
-public class Movies {
-    private final String movieName;
-    private final int releaseDate;
-    private final ArrayList<String> genre;
-    private final float rating;
-    protected TextUI ui = new TextUI();
+public class Movies extends Media {
 
-    public Movies(String movieName, int releaseDate, ArrayList<String>genre, float rating){
-        this.movieName = movieName;
-        this.genre = genre;
-        this.releaseDate = releaseDate;
-        this.rating = rating;
+    public Movies(String mediaName, int releaseDate, ArrayList<String> genre, float rating) {
+        super(mediaName, releaseDate, genre, rating);
     }
 
     public void addToUserList() {
@@ -27,27 +18,19 @@ public class Movies {
 
     }
 
-    public String getMovieName(){
-        return movieName;
-    }
-
-
-
-    public ArrayList<String> getGenre() {
-        return genre;
-    }
-
-    public int getReleaseDate() {
-        return releaseDate;
-    }
-
-    public float getRating() {
-        return rating;
-    }
-
     @Override
     public String toString() {
-        return "Movie name: " + movieName + " | Genre: " + genre + " releaseDate: " + releaseDate + " Rating: " + rating;
+        return "Movie name: " + getMediaName() + super.toString();
     }
 
+    /*public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Media media = (Media) o;
+        return Object.equals(genre, media.genre);
+    }
+
+    public int hasCode() {
+        return Object.hash(genre);
+    }*/
 }
