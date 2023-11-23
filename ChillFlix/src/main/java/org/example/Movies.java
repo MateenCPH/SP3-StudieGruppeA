@@ -19,12 +19,6 @@ public class Movies {
         this.rating = rating;
     }
 
-    public void play() {
-        //ui.displayMsg(movies.movieName + " is now playing");
-        //ArrayList<Movies> m = new ArrayList<>();
-        //user.addToWatchedMovies(m, movies);
-    }
-
     public void addToUserList() {
         //user.addToWatchedMovies(ArrayList<>, movies);
     }
@@ -33,8 +27,22 @@ public class Movies {
 
     }
 
+    public String getMovieName(){
+        return movieName;
+    }
+
+
+
     public ArrayList<String> getGenre() {
         return genre;
+    }
+
+    public int getReleaseDate() {
+        return releaseDate;
+    }
+
+    public float getRating() {
+        return rating;
     }
 
     @Override
