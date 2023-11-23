@@ -20,47 +20,30 @@ public class Homepage {
 
     public void setup() {
         //String [] readData = io.readMediaData("data/")
-        ArrayList<String> movieData = io.readMediaData("src/main/java/data/movies.txt");
+        ArrayList<String> movieData = io.readMediaData("C:\\Users\\matee\\Documents\\Intellij\\SP3-StudieGruppeA\\ChillFlix\\src\\main\\java\\data\\movies.txt");
 
         for (String s : movieData) {
             String[] row = s.split(";");
             String name = row[0].trim();
             int releaseDate = Integer.parseInt((row[1]).trim());
-            ArrayList<String> genres = new ArrayList<>(Arrays.asList(row[2].trim().split(",")));
+            String[] genres = row[2].trim().split(",");
+            ArrayList<String> genre = new ArrayList<>(List.of(genres));
             String ratingString = row[3].trim().replace(",", ".");
             float rating = Float.parseFloat(ratingString);
 
-            registerMovies(name, releaseDate, genres, rating);
+            registerMovies(name, releaseDate, genre, rating);
         }
         this.displayMovies();
 
-        ArrayList<String> seriesData = io.readMediaData("src/main/java/data/series.txt");
+        ArrayList<String> seriesData = io.readMediaData("C:\\Users\\matee\\Documents\\Intellij\\SP3-StudieGruppeA\\ChillFlix\\src\\main\\java\\data\\series.txt");
         for (String s : seriesData) {
             String[] row = s.split(";");
             String name = row[0];
-            String[] releaseDates = row[1].split("-");
-            int releaseDateStart, releaseDateEnd;
-            try {
-                releaseDateStart = Integer.parseInt(releaseDates[0].trim());
-            } catch (NumberFormatException e) {
-                System.err.println("Error parsing release date start for series: " + name);
-                continue;
-            }
-            if (row[1].endsWith("-")) {
-                releaseDateEnd = Series.ONGOING;
-            } else if (releaseDates.length > 1 && !releaseDates[1].trim().isEmpty()) {
-                try {
-                    releaseDateEnd = Integer.parseInt(releaseDates[1].trim());
-                } catch (NumberFormatException e) {
-                    System.err.println("Error parsing release date end for series: " + name);
-                    continue;
-                }
-            } else {
-                releaseDateEnd = Series.ONGOING;
-            }
-            //int releaseDateStart = Integer.parseInt(releaseDates[0]);
-            //int releaseDateEnd = row[1].endsWith("-") ? Series.ONGOING : Integer.parseInt(releaseDates[1].trim());
-            ArrayList<String> genre = new ArrayList<>(Arrays.asList(row[2].trim().split(",")));
+            int runTime = Integer.parseInt(Integer.parseInt(row[1].trim()) + " this series is ongoing");
+
+            String[] genres = row[2].split(",");
+            ArrayList<String> genre = new ArrayList<>(List.of(genres));
+
             String ratingString = row[3].trim().replace(",", ".");
             float rating = Float.parseFloat(ratingString);
 
@@ -73,9 +56,9 @@ public class Homepage {
                 int episodeNumber = Integer.parseInt(seasonEpisode[1].trim());
                 episodesPerSeason.put(seasonNumber, episodeNumber);
             }
-            registerSeries(name, releaseDateStart, releaseDateEnd, genre, rating, episodesPerSeason);
+            registerSeries(name, runTime, genre, rating, episodesPerSeason);
         }
-        displaySeries();
+        this.displaySeries();
     }
 
     public void logInDialog() {
@@ -113,7 +96,7 @@ public class Homepage {
         for (User user : userList) {
             if (user.getUsername().equals(inputUserName) && user.getPassword().equals(inputPassword)) {
                 System.out.println("Welcome " + inputUserName);
-
+                menuDialog();
                 return;
             }
         }
@@ -141,19 +124,30 @@ public class Homepage {
         }
     }
 
-
     public void categoryMenu() {
-        menuOptions.add("1 Best Movies");
-        menuOptions.add("2. Category's");
-        menuOptions.add("3. Watched Movies");
-        menuOptions.add("4. Saved Movies");
+        menuOptions.add("[1] Search specific movie");
+        menuOptions.add("[2] Category's");
+        menuOptions.add("[3] Watched Movies");
+        menuOptions.add("[4] Saved Movies");
         System.out.println(menuOptions);
     }
 
+    public void searchMovie() {
+        ui.displayMsg("");
+        String input = ui.getInput("Choose a movie");
+
+        for (Movies movie : movies) {
+            if (movie.getMediaName().equalsIgnoreCase(input)) {
+                ui.displayMsg(movie.getMediaName() + "is now playing...");
+                break;
+            } else {
+                ui.displayMsg("Could not find movie, try something else");
+                searchMovie();
+            }
+        }
+    }
+
     public void showWatchedMovies() {
-        // add method in User class?
-        ArrayList<Movies> watchedMovies = u.();
-        String input = "";
 
         if (u.watchedMovies.isEmpty()) {
             ui.displayMsg(u.getUsername() + ". You have not watched any movies yet\nReturning to the main menu");
@@ -162,16 +156,13 @@ public class Homepage {
         } else {
             ui.displayMsg(u.getUsername() + ", this are the movies you have seen");
 
-            for (Movies movie : watchedMovies) {
+            for (Movies movie : u.watchedMovies) {
                 ui.displayMsg(movie.toString());
             }
         }
-
     }
 
-
-
-    public void movieCategory() {
+    /*public void movieCategory() {
         //eventuelt tilføj en equals metode (); finde ud af hvad der skal indgå i sammenligningen.
         Set<String> categories = new HashSet<>();
         for (Movies movie : movies) {
@@ -189,28 +180,13 @@ public class Homepage {
 
     }
 
+    public boolean equals (Object o){
+        if (this == o) return true;
+        if (o==null || getClass() != o.getClass()) return false;
+        Media media =(Media) o;
+        return Object.equals(genre, media.genre);
+    } */
 
-    public void searchMovie() {
-        displayMovies();
-        ui.displayMsg("");
-        String input = ui.getInput("Choose a movie");
-
-        for (Movies movie : movies) {
-            if (movie.getMovieName().equalsIgnoreCase(input)) {
-                ui.displayMsg(movie.getMovieName() + "is now playing...");
-                break;
-            } else {
-                ui.displayMsg("Could not find movie, try something else");
-                searchMovie();
-            }
-        }
-    }
-    /*
-    public void play() {
-        ui.displayMsg(movies.movieName + " is now playing");
-        ArrayList<Movies> m = new ArrayList<>();
-        u.addToWatchedMovies(m, movies);
-    }*/
 
     public void backToMenu() {
         menuDialog();
@@ -225,8 +201,8 @@ public class Homepage {
         movies.add(m);
     }
 
-    private void registerSeries(String seriesName, int releaseDateStart, int releaseDateEnd, ArrayList<String> genre, float rating, Map<Integer, Integer> episodesPerSeason) {
-        Series s = new Series(seriesName, releaseDateStart, releaseDateEnd, genre, rating, episodesPerSeason);
+    private void registerSeries(String seriesName, int releaseDateStart, ArrayList<String> genre, float rating, Map<Integer, Integer> episodesPerSeason) {
+        Series s = new Series(seriesName, releaseDateStart, genre, rating, episodesPerSeason);
         series.add(s);
     }
 

@@ -1,29 +1,54 @@
 package org.example;
 
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.Objects;
+import java.util.List;
+
 
 public class Media {
 
     private final String mediaName;
     private final int releaseDateStart;
-    private final int releaseDateEnd;
-    private final Set<String> genre;
-    private final double rating;
+    protected final ArrayList<String> genre;
+    private final float rating;
 
-    public Media(String mediaName, int releaseDateStart, int releaseDateEnd, Set<String> genre, double rating) {
+    public Media(String mediaName, int releaseDateStart, ArrayList<String> genre, float rating) {
         this.mediaName = mediaName;
         this.releaseDateStart = releaseDateStart;
-        this.releaseDateEnd = releaseDateEnd;
         this.genre = genre;
         this.rating = rating;
     }
 
-    public Set<String> getGenre() {
-        return genre;
+    public String getMediaName() {
+        return mediaName;
     }
 
-    @Override
-    public String toString() {
-        return "Media name: " + mediaName + " Release date: " + releaseDateStart + "-" + releaseDateEnd + " Genre: " + genre + " Rating: " + rating;
+    public int getReleaseDateStart() {
+        return releaseDateStart;
     }
+
+   /* public ArrayList<String> getGenre() {
+        return genre.stream();
+    }*/
+
+    public double getRating() {
+        return rating;
+    }
+
+
+    public String toString() {
+        return " Release date: " + releaseDateStart + " | Genre: " + genre + " | Rating: " + getRating();
+    }
+
+    /*@Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Media media = (Media) o;
+        return Object.equals(genre, media.genre);
+    }
+    @Override
+    public int hasCode() {
+    return Object.hash(genre);
+    }*/
 }

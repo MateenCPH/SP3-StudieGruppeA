@@ -26,14 +26,18 @@ public class User {
         System.out.println("Please create an account with a username & password.");
     }
 
-    public void play(Media movmediaie) {
-        ui.displayMsg(media.getMovieName()+ " is now playing");
-        ArrayList<Movies> m = new ArrayList<>();
+    public void playMovie(Movies movie) {
+        ui.displayMsg(movie.getMediaName()+ " is now playing");
         addToWatchedMovies(movie);
     }
 
-    public void addToWatchedMovies(Movies movies) {
-        watchedMovies.add(movies);
+    public void playSeries(Series serie){
+        ui.displayMsg(serie.getMediaName()+ " is now playing");
+        addToWatchedSeries(serie);
+    }
+
+    public void addToWatchedMovies(Movies movie) {
+        watchedMovies.add(movie);
 
     }
 
