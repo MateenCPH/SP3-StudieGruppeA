@@ -5,7 +5,8 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
         Homepage h = new Homepage();
-        h.setup();
+        //h.setup();
+
 
 
         // Opret brugere
@@ -18,5 +19,7 @@ public class Main {
 
         // Kald loginAccount-metoden
             //homepage.loginAccount();
+
+        h.menuDialog();
     }
 }

@@ -8,21 +8,19 @@ public class Homepage {
     FileIO io = new FileIO();
     private ArrayList<Movies> movies;
     private ArrayList<Series> series;
-    private ArrayList<Series> seriesList;
     private final TextUI ui = new TextUI();
     private final User u = new User("Username", "Password");
     ArrayList<User> userList = new ArrayList<>();
-    ArrayList<String> menuOptions =  new ArrayList<>();
+    ArrayList<String> menuOptions = new ArrayList<>();
 
     public Homepage() {
         this.movies = new ArrayList<>();
-        this.seriesList = new ArrayList<>();
         this.series = new ArrayList<>();
     }
 
     public void setup() {
         //String [] readData = io.readMediaData("data/")
-        ArrayList<String> movieData = io.readMediaData("C:\\Users\\mjar\\Documents\\dev\\SP3-StudieGruppeA\\ChillFlix\\src\\main\\java\\org\\example\\movies.txt");
+        ArrayList<String> movieData = io.readMediaData("src/main/java/data/movies.txt");
 
         for (String s : movieData) {
             String[] row = s.split(";");
@@ -36,7 +34,7 @@ public class Homepage {
         }
         this.displayMovies();
 
-        ArrayList<String> seriesData = io.readMediaData("C:\\Users\\mjar\\Documents\\dev\\SP3-StudieGruppeA\\ChillFlix\\src\\main\\java\\org\\example\\series.txt");
+        ArrayList<String> seriesData = io.readMediaData("src/main/java/data/series.txt");
         for (String s : seriesData) {
             String[] row = s.split(";");
             String name = row[0];
@@ -75,7 +73,7 @@ public class Homepage {
                 int episodeNumber = Integer.parseInt(seasonEpisode[1].trim());
                 episodesPerSeason.put(seasonNumber, episodeNumber);
             }
-            registerSeries(name,releaseDateStart,releaseDateEnd,genre,rating,episodesPerSeason);
+            registerSeries(name, releaseDateStart, releaseDateEnd, genre, rating, episodesPerSeason);
         }
         displaySeries();
     }
@@ -124,17 +122,17 @@ public class Homepage {
         loginAccount();
     }
 
-    public void menuDialog(){
+    public void menuDialog() {
         ui.displayMsg("Choose one of the following category's ");
         categoryMenu();
         String input = ui.getInput("");
-        if (input.equalsIgnoreCase("Specific Movies")){ // søg efter en bestemt film
-            ui.displayMsg("these movies are super good man");
-        } else if (input.equalsIgnoreCase("Categorys")){ // søg efter alle genre
+        if (input.equalsIgnoreCase("1") || input.equalsIgnoreCase("search movie")) { // søg efter en bestemt film
+            searchMovie();
+        } else if (input.equalsIgnoreCase("2") || input.equalsIgnoreCase("Categorys")) { // søg efter alle genre
             ui.displayMsg("Craaazy Categorys daaawg");
-        } else if (input.equalsIgnoreCase("Watched Movies")) { // alle sete film for brugeren
+        } else if (input.equalsIgnoreCase("3") || input.equalsIgnoreCase("Watched Movies")) { // alle sete film for brugeren
             ui.displayMsg("U have watched these movies... gang gang");
-        } else if (input.equalsIgnoreCase("Saved Movies")) { // alle gemte film for brugeren
+        } else if (input.equalsIgnoreCase("4") || input.equalsIgnoreCase("Saved Movies")) { // alle gemte film for brugeren
             ui.displayMsg("Why did u save all these movies??..... skrrt");
         } else {
             ui.displayMsg("You didn't choose an existing category, try again noob");
@@ -143,35 +141,82 @@ public class Homepage {
         }
     }
 
+
     public void categoryMenu() {
-        menuOptions.add("Best Movies");
-        menuOptions.add("Category's");
-        menuOptions.add("Watched Movies");
-        menuOptions.add("Saved Movies");
+        menuOptions.add("1 Best Movies");
+        menuOptions.add("2. Category's");
+        menuOptions.add("3. Watched Movies");
+        menuOptions.add("4. Saved Movies");
         System.out.println(menuOptions);
     }
 
-    public void watchedMovies(){
+    public void showWatchedMovies() {
+        // add method in User class?
+        ArrayList<Movies> watchedMovies = u.();
+        String input = "";
+
+        if (u.watchedMovies.isEmpty()) {
+            ui.displayMsg(u.getUsername() + ". You have not watched any movies yet\nReturning to the main menu");
+            menuDialog();
+
+        } else {
+            ui.displayMsg(u.getUsername() + ", this are the movies you have seen");
+
+            for (Movies movie : watchedMovies) {
+                ui.displayMsg(movie.toString());
+            }
+        }
 
     }
-    public void movieCategory(){
+
+
+
+    public void movieCategory() {
+        //eventuelt tilføj en equals metode (); finde ud af hvad der skal indgå i sammenligningen.
+        Set<String> categories = new HashSet<>();
+        for (Movies movie : movies) {
+            // adAll sørger for at add alle film genre til Set categories
+            categories.addAll(movie.getGenre());
+        }
+        ui.displayMsg("This is the categories");
+        for (String category : categories) {
+            ui.displayMsg(category);
+        }
+        System.out.println(categories);
+
+        // Tilføjelse af der skal vælges imellem genrene af film.
+        String selectedCategory = ui.getInput("Chose a category");
 
     }
 
-    public void SearchMovie(){
+
+    public void searchMovie() {
         displayMovies();
         ui.displayMsg("");
         String input = ui.getInput("Choose a movie");
-        if (input.equalsIgnoreCase("")){
 
+        for (Movies movie : movies) {
+            if (movie.getMovieName().equalsIgnoreCase(input)) {
+                ui.displayMsg(movie.getMovieName() + "is now playing...");
+                break;
+            } else {
+                ui.displayMsg("Could not find movie, try something else");
+                searchMovie();
+            }
         }
     }
+    /*
+    public void play() {
+        ui.displayMsg(movies.movieName + " is now playing");
+        ArrayList<Movies> m = new ArrayList<>();
+        u.addToWatchedMovies(m, movies);
+    }*/
 
-    public void backToMenu(){
+    public void backToMenu() {
         menuDialog();
     }
 
-    public void endApplication(){
+    public void endApplication() {
 
     }
 
@@ -195,9 +240,10 @@ public class Homepage {
     public ArrayList<Movies> getSavedMovies(){
         return savedMovies;
     }*/
+    /*
     public ArrayList<Series> getSerieList() {
         return seriesList;
-    }
+    }*/
 
     public void endStreaming() {
 
