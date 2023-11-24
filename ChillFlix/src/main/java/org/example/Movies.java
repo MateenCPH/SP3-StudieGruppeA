@@ -22,15 +22,5 @@ public class Movies extends Media {
     public String toString() {
         return "Movie name: " + getMediaName() + super.toString();
     }
-
-    /*public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Media media = (Media) o;
-        return Object.equals(genre, media.genre);
-    }
-
-    public int hasCode() {
-        return Object.hash(genre);
-    }*/
 }
+

@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec01890a-5f7b-4737-9612-c1c7ea79a9d1" name="Changes" comment="lille commit">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_2023_13_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_2023_13_57__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChillFlix/src/main/java/org/example/FileIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChillFlix/src/main/java/org/example/FileIO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChillFlix/src/main/java/org/example/Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChillFlix/src/main/java/org/example/Homepage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChillFlix/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChillFlix/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChillFlix/src/main/java/org/example/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChillFlix/src/main/java/org/example/Media.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChillFlix/src/main/java/org/example/Movies.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChillFlix/src/main/java/org/example/Movies.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChillFlix/src/main/java/org/example/Series.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChillFlix/src/main/java/org/example/Series.java" afterDir="false" />
@@ -42,7 +45,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "SP3-Mateen",
+    "last_opened_file_path": "C:/Users/matee/Documents/Intellij/SP3-StudieGruppeA/ChillFlix/src/main/java/org/example",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -51,6 +56,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\matee\Documents\Intellij\SP3-StudieGruppeA\ChillFlix\src\main\java\org\example" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
@@ -61,6 +71,19 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="ChillFlix" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="ChillFlix" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -81,6 +104,7 @@
       <updated>1700744165322</updated>
       <workItem from="1700744166484" duration="115000" />
       <workItem from="1700744288489" duration="1410000" />
+      <workItem from="1700829288224" duration="7845000" />
     </task>
     <task id="LOCAL-00001" summary="lille commit">
       <option name="closed" value="true" />
