@@ -8,9 +8,9 @@ public class User {
     private String password;
     private final TextUI ui = new TextUI();
     protected ArrayList<Movies> watchedMovies;
-    private ArrayList<Movies> savedMovies;
-    protected ArrayList<Series> watchedSeries;
-    private final ArrayList<Series> savedSeries;
+    protected final ArrayList<Movies> savedMovies;
+    protected final ArrayList<Series> watchedSeries;
+    protected final ArrayList<Series> savedSeries;
 
     public User(String username, String password) {
         this.username = username;
@@ -22,23 +22,22 @@ public class User {
     }
 
     public void registerUser() {
-
         System.out.println("Please create an account with a username & password.");
     }
 
     public void playMovie(Movies movie) {
-        ui.displayMsg(movie.getMediaName()+ " is now playing");
-        addToWatchedMovies(movie);
+        ui.displayMsg(movie.getMediaName() + " is now playing...");
+
+        //playMovieDialog();
     }
 
-    public void playSeries(Series serie){
-        ui.displayMsg(serie.getMediaName()+ " is now playing");
-        addToWatchedSeries(serie);
+    public void playSeries(Series series){
+        ui.displayMsg(series.getMediaName()+ " is now playing...");
+        addToWatchedSeries(series);
     }
 
     public void addToWatchedMovies(Movies movie) {
         watchedMovies.add(movie);
-
     }
 
     public void addToSavedMovies(Movies movies) {
